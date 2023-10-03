@@ -1,14 +1,15 @@
 from flask import Flask, request, jsonify
 from pymongo import MongoClient
-from datetime import datetime
+
 
 app = Flask(__name__)
 
 client = MongoClient('mongodb+srv://<username>:<password><cluster>.hgdvwnw.mongodb.net/?retryWrites=true&w=majority')
 
-db = client["mydatabase"]
-doctors_collection = db["doctors"]
-appointments_collection = db["appointments"]
+
+db = client["mydatabase"]#client
+doctors_collection = db["doctors"] #collection1
+appointments_collection = db["appointments"]#collection2
 
 # Endpoint to create a new doctor
 @app.route('/doctors', methods=['POST'])
@@ -22,8 +23,6 @@ def create_doctor():
     doctors_collection.insert_one(doctor)
     return jsonify({"message": "Doctor created successfully"}), 201
 
-# Endpoint to create a new appointment
-# Endpoint to create a new appointment
 # Endpoint to create a new appointment
 @app.route('/appointments', methods=['POST'])
 def create_appointment():
