@@ -1,0 +1,36 @@
+Hi this Project is Implement API endpoints for an out-patient appointment system.
+Doctors practice on a weekly schedule.
+For simplicity, let's assume they practice on only one location, only on evenings, may consult X number of patients and always leave on Sundays.
+API implementation is expected for doctors listing, doctor detail page and appointment booking.
+
+Steps 1
+* Install Python
+* Install Flask
+* Install Pymongo
+* Install IDE
+
+Step 2
+* After installation connect the system environment
+
+Step 3
+* Create account on mongoDB atlas
+* create new cluster
+* Create client and collection
+
+Step 4
+* once you have been created
+client = MongoClient('mongodb+srv://<username>:<password><cluster>.hgdvwnw.mongodb.net/?retryWrites=true&w=majority')
+
+* set your username: password cluster
+
+crreate database and replace with this in this "your_database_name"
+db = client["your_database_name"]
+
+create collection 2 and "doctors", "appointments"
+doctors_collection = db["doctors"]
+appointments_collection = db["appointments"]
+
+
+->create doctor
+->create an appointment
+    in this process it check and books an available appointment timing.
